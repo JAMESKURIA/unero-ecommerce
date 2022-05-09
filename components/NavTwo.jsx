@@ -4,9 +4,9 @@ import { BsGrid, BsList } from "react-icons/bs";
 
 const NavTwo = () => {
   return (
-    <div className="flex justify-between items-center py-6">
-      <div className="inline-flex space-x-8">
-        <h3 className="hover:text-red-500 cursor-pointer text-red-500 font-semibold mr-2 ">
+    <div className="flex  flex-col md:flex-row justify-between items-center py-6">
+      <div className="flex flex-col gap-4 md:flex-row md:gap-8 items-center ">
+        <h3 className="hover:text-red-500 cursor-pointer text-red-500  mr-2 font-semibold">
           All
         </h3>
         <h3 className="hover:text-red-500 cursor-pointer text-gray-500 mr-2">

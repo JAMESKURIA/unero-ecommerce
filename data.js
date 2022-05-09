@@ -6,8 +6,8 @@ export const data = [
     price: 36.0,
     sale: false,
     stars: 0,
-    discount: 0,
-    colors: [],
+    discount: 8,
+    colors: ["#FFC300", "red", "#DE3163"],
   },
   {
     id: 2,
@@ -67,6 +67,6 @@ export const data = [
     sale: true,
     stars: 0,
     discount: 5.0,
-    colors: ["blue", "black"],
+    colors: ["blue", "red", "black"],
   },
 ];

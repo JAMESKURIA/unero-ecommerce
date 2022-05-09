@@ -1,14 +1,18 @@
+import Head from "next/head";
 import React from "react";
 import { Footer, Nav } from ".";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="max-w-7xl mx-auto">
-        <Nav />
-
-        <main>{children}</main>
-      </div>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Unero Ecommerce</title>
+      </Head>
+      <Nav />
+      <main className="max-w-7xl mx-auto">{children}</main>
       <Footer />
     </>
   );

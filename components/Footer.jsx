@@ -6,9 +6,10 @@ import {
 } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
 import Link from "next/link";
+
 const Footer = () => {
   return (
-    <div className=" bg-gray-100 py-20">
+    <div className=" bg-gray-100 py-20 mt-auto">
       <div className="max-w-7xl mx-auto  text-gray-700 text-sm">
         <div className="flex justify-between align-center">
           <Link href="/">
