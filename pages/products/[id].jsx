@@ -7,6 +7,9 @@ import {
   AiOutlineTwitter,
   AiFillYoutube,
 } from "react-icons/ai";
+
+import Slider from "react-slick";
+
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -30,13 +33,29 @@ const Product = ({ product }) => {
     // Add to bag logic here
   };
 
+  // REact slick settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+  };
+
   return (
     <>
       <div className="py-8">
         <h3 className="text-gray-600 mb-12">
-          <span className="text-gray-900 font-semibold">Home</span> /{" "}
-          <span className="text-gray-900 font-semibold">Decorations</span> /{" "}
-          <span> DG Wood Sunglasses</span>
+          <span className="text-gray-900 font-semibold cursor-pointer">
+            Home
+          </span>{" "}
+          /{" "}
+          <span className="text-gray-900 font-semibold cursor-pointer">
+            Decorations
+          </span>{" "}
+          / <span> DG Wood Sunglasses</span>
         </h3>
 
         <div className="grid grid-cols-2">
@@ -140,9 +159,9 @@ const Product = ({ product }) => {
             </div>
 
             {/* clear btn */}
-            <button className="w-full text-center uderline text-sm text-red-500 font-semibold ml-20">
-              Clear
-            </button>
+            <butto className="cursor-pointer ml-20 self-start underline text-sm text-red-500 font-semibold">
+              <h1>Clear</h1>
+            </butto>
 
             {/* buttons */}
             <div className="flex gap-2 h-10 my-4">
@@ -190,10 +209,12 @@ const Product = ({ product }) => {
       <div>
         {/* nav */}
         <div className="py-8 flex items-center justify-center space-x-8 text-gray-700">
-          <h3 className="text-gray-900 font-semibold">Description</h3>
-          <h3>Size Guides</h3>
-          <h3>Shipping</h3>
-          <h3>Reviews (3)</h3>
+          <h3 className="cursor-pointer text-gray-900 font-semibold">
+            Description
+          </h3>
+          <h3 className="cursor-pointer">Size Guides</h3>
+          <h3 className="cursor-pointer">Shipping</h3>
+          <h3 className="cursor-pointer">Reviews (3)</h3>
         </div>
 
         {/* Description */}
@@ -249,7 +270,18 @@ const Product = ({ product }) => {
       </div>
 
       {/* Related products */}
-      <div></div>
+      <div className="flex flex-col mb-20 ">
+        <h2 className="text-center text-3xl py-4 font-medium text-gray-900">
+          Related products{" "}
+        </h2>
+        <Slider {...settings}>
+          {[1, 2, 3, 4, 5].map((prod) => (
+            <div key={prod}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </>
   );
 };
