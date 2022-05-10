@@ -46,7 +46,7 @@ const Product = ({ product }) => {
 
   return (
     <>
-      <div className="py-8">
+      <div className="pt-10 pb-14">
         <h3 className="text-gray-600 mb-12">
           <span className="text-gray-900 font-semibold cursor-pointer">
             Home
@@ -70,17 +70,14 @@ const Product = ({ product }) => {
           </div>
 
           {/* right - details */}
-          <div className="flex flex-col ">
+          <div className="flex flex-col gap-4">
             {/* brand */}
-            <h3 className="font-bold uppercase text-blue-500 text-sm mb-2">
-              {" "}
-              DG
-            </h3>
+            <h3 className="font-bold uppercase text-blue-500 text-sm"> DG</h3>
 
-            <h3>DG Wood Sunglasses</h3>
+            <h3 className="text-lg">{product.name}</h3>
             {/* Stars */}
             {product.stars > 0 && (
-              <div className="inline-flex space-x-4 items-center mt-1">
+              <div className="inline-flex space-x-4 items-center ">
                 <div className="flex gap-1 text-gray-400 text-sm">
                   {STARS.map((star) => (
                     <AiFillStar
@@ -98,16 +95,16 @@ const Product = ({ product }) => {
             )}
 
             {/* Price */}
-            <h4 className="text-xl text-gray-600 my-4">$ {product.price}</h4>
+            <h4 className="text-xl text-gray-600 my-2">$ {product.price}</h4>
 
             {/* Available */}
-            <h4 className="font-semibold text-sm my-2">
+            <h4 className="font-semibold text-sm my-1">
               Available:{" "}
               <span className="text-green-500 font-medium">in Stock</span>
             </h4>
 
             {/* short descritption */}
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 leading-8">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem,
               debitis adipisci ducimus dolor dolorum inventore ex natus pariatur
               assumenda commodi
@@ -164,7 +161,7 @@ const Product = ({ product }) => {
             </butto>
 
             {/* buttons */}
-            <div className="flex gap-2 h-10 my-4">
+            <div className="flex gap-2 h-10 my-8">
               <button className="px-4 inline-flex  items-center border border-2 border-gray-700">
                 <FiMinus />
                 <input type="number" className="outline-none border-none" />
@@ -179,7 +176,7 @@ const Product = ({ product }) => {
             </div>
 
             {/* Share & wishlist */}
-            <div className="flex items-center justify-between my-4">
+            <div className="flex items-center justify-between mb-4">
               <button
                 className="text-xl  cursor-pointer flex gap-2"
                 onClick={() => handleLike(product.id)}
@@ -206,7 +203,7 @@ const Product = ({ product }) => {
       </div>
 
       {/* DESCRIPTION */}
-      <div>
+      <div className="my-10 flex flex-col">
         {/* nav */}
         <div className="py-8 flex items-center justify-center space-x-8 text-gray-700">
           <h3 className="cursor-pointer text-gray-900 font-semibold">
@@ -218,7 +215,7 @@ const Product = ({ product }) => {
         </div>
 
         {/* Description */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-10 leading-10">
           {/* Detail */}
           <div>
             <h3 className="text-xl font-medium text-gray-900">Detail</h3>
@@ -254,7 +251,7 @@ const Product = ({ product }) => {
         </div>
 
         {/* Tags */}
-        <div className="w-full my-10 border-t border-b border-gray-300 inline-flex items-center justify-center py-4 text-sm space-x-8">
+        <div className="w-full my-10 border-t border-b border-gray-300 inline-flex items-center justify-center py-4 text-sm space-x-8 mt-20">
           <h3 className="text-gray-700">
             <span className="font-semibold text-gray-900">SKU: </span>2579-MK96
           </h3>
@@ -271,7 +268,7 @@ const Product = ({ product }) => {
 
       {/* Related products */}
       <div className="flex flex-col mb-20 ">
-        <h2 className="text-center text-3xl py-4 font-medium text-gray-900">
+        <h2 className="text-center text-3xl py-4 mb-10 font-medium text-gray-900">
           Related products{" "}
         </h2>
         <Slider {...settings}>

@@ -26,12 +26,16 @@ const Nav = () => {
         <div className="inline-flex space-x-6 text-2xl text-gray-700">
           <FiSearch />
           <BsPerson />
-          <div className="relative">
-            <FiShoppingBag />
-            <span className="cursor-pointer absolute -bottom-1 -right-2 text-white text-sm font-normal rounded-full  bg-red-500 flex items-center justify-center h-5 w-5 ">
-              3
-            </span>
-          </div>
+          <Link href={"/cart"}>
+            <div className="relative">
+              <span className="cursor-pointer">
+                <FiShoppingBag />
+              </span>
+              <span className="cursor-pointer absolute -bottom-1 -right-2 text-white text-sm font-normal rounded-full  bg-red-500 flex items-center justify-center h-5 w-5 ">
+                3
+              </span>
+            </div>
+          </Link>
           <FiSettings />
         </div>
       </div>

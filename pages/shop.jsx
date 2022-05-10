@@ -5,7 +5,7 @@ import { server } from "../config";
 const Shop = ({ products }) => {
   return (
     <div>
-      <BreadCrumbs />
+      <BreadCrumbs title="Shop Page" />
       <NavTwo />
       <ProductList products={products} />
       <LoadingBanner />

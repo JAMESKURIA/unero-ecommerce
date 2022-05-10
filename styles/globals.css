@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 html {
   height: 100%;
 }
@@ -10,4 +13,5 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  font-family: 'Nunito', sans-serif;
 }
