@@ -20,7 +20,9 @@ const Nav = () => {
           <h3 className="cursor-pointer">Pages</h3>
           <h3 className="cursor-pointer">Collections</h3>
           <h3 className="cursor-pointer">News</h3>
-          <h3 className="cursor-pointer">Elements</h3>
+          <Link href={"/contacts"}>
+            <h3 className="cursor-pointer">Contact Us</h3>
+          </Link>
         </div>
 
         <div className="inline-flex space-x-6 text-2xl text-gray-700">

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BreadCrumbs, CartItem } from "../components";
 import { BiArrowBack, BiRefresh, BiX } from "react-icons/bi";
@@ -12,32 +11,33 @@ const Cart = () => {
       <div className="py-6 mt-8">
         <h3 className="text-xl mb-8 text-gray-900">Your cart items</h3>
 
-        <div className="flex items-center justify-around text-gray-600 bg-gray-200 py-6 my-6">
+        <div className="flex items-center justify-around text-gray-600 bg-gray-100 py-6 my-6">
           <h3>Product Name</h3>
           <h3>Price</h3>
           <h3>Quantity</h3>
           <h3>Total</h3>
         </div>
 
-        <CartItem />
-        <CartItem />
+        {[1, 2, 3].map((p) => (
+          <CartItem key={p.toString()} />
+        ))}
       </div>
 
       {/* Buttons */}
       <div className="flex justify-between my-8 mb-20 pl-4">
         <Link href={"/shop"}>
-          <button className="flex items-center gap-2 p-2 bg-gray-900 text-white px-3  hover:bg-gray-500">
+          <button className="flex items-center gap-2 p-2 bg-black text-white px-3  hover:bg-gray-100 hover:text-black">
             <BiArrowBack />
             <span>Back to Shop</span>
           </button>
         </Link>
 
         <div className="flex gap-8 ">
-          <button className="border border-gray-400 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
+          <button className="border border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
             <BiRefresh />
             <span>Update</span>
           </button>
-          <button className="border border-gray-400 flex items-center gap-2 p-2 bg-none text-gray-900 px-3 hover:text-white hover:bg-red-600">
+          <button className="border border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3 hover:text-white hover:bg-red-600">
             <BiX />
             <span>Clear All</span>
           </button>
@@ -51,7 +51,7 @@ const Cart = () => {
           <h3 className="text-xl font-semibold text-gray-900">
             Calculate shipping
           </h3>
-          <select className="p-2 border border-gray-400 outline-none bg-white">
+          <select className="p-2 border border-gray-100 outline-none bg-white">
             <option value="Nairobi" selected>
               Nairobi
             </option>
@@ -61,10 +61,10 @@ const Cart = () => {
           </select>
           <input
             type="text"
-            className="border border-gray-400 p-2 outline-none"
+            className="border border-gray-100 p-2 outline-none"
             placeholder="Postcode / Zip"
           />
-          <button className="border w-fit border-gray-400 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
+          <button className="border w-fit border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
             <BiRefresh />
             <span>Update Total</span>
           </button>
@@ -78,17 +78,17 @@ const Cart = () => {
           <h4>Enter your coupon code if you have one</h4>
           <input
             type="text"
-            className="border border-gray-400 p-2 outline-none"
+            className="border border-gray-100 p-2 outline-none"
             placeholder="Coupon Code"
           />
-          <button className="w-fit border border-gray-400 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
+          <button className="w-fit border border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3  hover:bg-gray-200">
             <span>Apply Coupon</span>
           </button>
         </div>
 
         {/* Total */}
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-6 bg-gray-100 p-4 ">
+          <div className="flex flex-col gap-6 bg-gray-100 px-6 py-10 ">
             <div className="flex justify-between font-semibold">
               <h3>subtotal</h3>
               <h3>

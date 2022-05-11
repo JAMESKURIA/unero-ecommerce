@@ -5,7 +5,7 @@ const BreadCrumbs = ({ title }) => {
   const router = useRouter();
   const { pathname } = router;
   const path = pathname.split("/");
-  console.log(path);
+  // console.log(path);
 
   return (
     <div className=" h-48  flex flex-col items-center justify-center">
@@ -17,7 +17,7 @@ const BreadCrumbs = ({ title }) => {
 
         <h4 className="text-gray-500 capitalize">
           {path.map(
-            (p, i) => p != 0 && <span key={i.toString()}> / {p} </span>
+            (p, i) => i !== 0 && <span key={i.toString()}> / {p} </span>
           )}
         </h4>
       </div>

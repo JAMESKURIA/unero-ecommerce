@@ -1,10 +1,11 @@
+import React from "react";
 import Image from "next/image";
 
 const CartItem = () => {
   return (
     <div className=" flex items-center justify-around text-gray-600 py-6">
       <div className=" flex items-center gap-6">
-        <div className=" bg-gray-200 p-6">
+        <div className=" bg-gray-100 p-6">
           <Image
             src={"/bag2.png"}
             height={60}
@@ -29,18 +30,21 @@ const CartItem = () => {
 
       <div>
         <input
-          className="border border-gray-400 p-2"
+          className="border border-gray-200 p-2"
           type="number"
           name=""
           id=""
+          defaultValue={1}
         />
       </div>
 
-      <div className="flex justify-between gap-6">
+      <div className="flex justify-between items-center gap-6">
         <h3>
           $ <span>205.00</span>
         </h3>
-        <span>&times;</span>
+        <span className="text-lg hover:text-red-500 cursor-pointer">
+          &times;
+        </span>
       </div>
     </div>
   );
