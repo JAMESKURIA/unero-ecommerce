@@ -8,6 +8,7 @@ export const data = [
     stars: 0,
     discount: 8,
     colors: ["#FFC300", "red", "#DE3163"],
+    inStock: 0,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const data = [
     stars: 3,
     discount: 12.0,
     colors: [],
+    inStock: 3,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const data = [
     stars: 0,
     discount: 0,
     colors: ["black", "green", "red"],
+    inStock: 6,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const data = [
     stars: 2,
     discount: 0,
     colors: [],
+    inStock: 9,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const data = [
     stars: 5,
     discount: 12.0,
     colors: ["#DE3163", "gray", "black"],
+    inStock: 7,
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const data = [
     stars: 4,
     discount: 0,
     colors: [],
+    inStock: 0,
   },
   {
     id: 7,
@@ -68,5 +74,6 @@ export const data = [
     stars: 0,
     discount: 5.0,
     colors: ["blue", "red", "black"],
+    inStock: 9,
   },
 ];
