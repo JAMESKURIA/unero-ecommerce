@@ -13,7 +13,7 @@ const Shop = ({ products }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${server}/api/products`);
   const products = await res.json();
 

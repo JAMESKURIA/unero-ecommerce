@@ -49,7 +49,7 @@ const Contacts = () => {
         <h3 className="capitalize text-3xl font-medium text-gray-800 text-center my-6">
           Get In touch
         </h3>
-        <form action="" className="my-8 grid grid-cols-3 gap-10">
+        <form action="" className="my-8 grid grid-cols-3 gap-10 leading-6">
           <div className="flex flex-col gap-3">
             <label
               htmlFor="name"
@@ -111,7 +111,7 @@ const Contacts = () => {
             ></textarea>
           </div>
           <div className="col-span-3 items-center flex justify-center">
-            <button className="flex w-fit h-fit  items-center justify-center py-1 px-10 bg-black text-white hover:text-black hover:bg-gray-100">
+            <button className="flex w-fit h-fit  items-center justify-center py-3 px-14 bg-black text-white hover:text-black hover:bg-gray-100">
               <span>Submit</span>
             </button>
           </div>

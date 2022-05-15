@@ -6,7 +6,7 @@ import { MdBlock } from "react-icons/md";
 
 const WishListItem = ({ product }) => {
   return (
-    <div className=" grid grid-cols-5 items-center justify-items-center text-gray-700 text-lg py-4 my-4 ">
+    <div className=" grid grid-cols-5 items-center justify-items-center text-gray-700 text-lg py-4 my-4 border-b border-b-gray-100">
       <div className="flex gap-4 col-span-2 w-full  items-center ">
         <span className="text-xl flex-none  h-10 w-10 flex items-center justify-center text-gray-500 hover:text-red-500 cursor-pointer ">
           <IoCloseOutline />
@@ -20,7 +20,7 @@ const WishListItem = ({ product }) => {
             alt={product.name}
           />
         </div>
-        <h3 className="hover:text-gray-900 hover:font-semibold cursor-pointer">
+        <h3 className="hover:text-gray-900 hover:underline cursor-pointer">
           {product.name}
         </h3>
       </div>

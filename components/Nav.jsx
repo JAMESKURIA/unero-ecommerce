@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <div className="w-full">
-      <div className="flex py-8 justify-between max-w-7xl mx-auto">
+    <div className="w-full pt-8">
+      <div className="flex py-8 pb-6 justify-between max-w-7xl mx-auto">
         <Link href="/">
           <a className="cursor-pointer uppercase font-bold text-2xl">Unero</a>
         </Link>
@@ -17,9 +17,13 @@ const Nav = () => {
           <Link href="/shop">
             <h3 className="cursor-pointer text-gray-900 font-bold">Shop</h3>
           </Link>
-          <h3 className="cursor-pointer">Pages</h3>
+          <Link href={"/wishlist"}>
+            <h3 className="cursor-pointer">Wishlist</h3>
+          </Link>
           <h3 className="cursor-pointer">Collections</h3>
-          <h3 className="cursor-pointer">News</h3>
+          <Link href={"/news"}>
+            <h3 className="cursor-pointer">News</h3>
+          </Link>
           <Link href={"/contacts"}>
             <h3 className="cursor-pointer">Contact Us</h3>
           </Link>

@@ -37,7 +37,7 @@ const Cart = () => {
             <BiRefresh />
             <span>Update</span>
           </button>
-          <button className="border border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3 hover:text-white hover:bg-red-600">
+          <button className="border border-gray-100 flex items-center gap-2 p-2 bg-none text-gray-900 px-3 hover:text-white hover:bg-red-400">
             <BiX />
             <span>Clear All</span>
           </button>

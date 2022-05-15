@@ -299,7 +299,7 @@ export default Product;
 // };
 
 // GET STATIC PROPS
-export const getStaticProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
   const res = await fetch(`${server}/api/products/${ctx.params.id}`);
   const product = await res.json();
 
@@ -309,22 +309,33 @@ export const getStaticProps = async (ctx) => {
     },
   };
 };
+// // GET STATIC PROPS
+// export const getStaticProps = async (ctx) => {
+//   const res = await fetch(`${server}/api/products/${ctx.params.id}`);
+//   const product = await res.json();
 
-// GET STATIC PATHS
-export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/products`);
-  const products = await res.json();
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// };
 
-  const ids = products.map((product) => product.id);
+// // GET STATIC PATHS
+// export const getStaticPaths = async () => {
+//   const res = await fetch(`${server}/api/products`);
+//   const products = await res.json();
 
-  const paths = ids.map((id) => ({
-    params: {
-      id: id.toString(),
-    },
-  }));
+//   const ids = products.map((product) => product.id);
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   const paths = ids.map((id) => ({
+//     params: {
+//       id: id.toString(),
+//     },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };

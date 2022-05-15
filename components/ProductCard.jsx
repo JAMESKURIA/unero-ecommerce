@@ -29,35 +29,36 @@ const ProductCard = ({ product }) => {
       onMouseLeave={() => setShowBag((prev) => false)}
     >
       {/* Product Image */}
-      <div className="relative bg-gray-100 p-6 flex items-center justify-center">
-        <Link href={`/products/${product.id}`}>
+      <Link href={`/products/${product.id}`}>
+        <div className="relative bg-gray-100 p-6 flex items-center justify-center">
           <Image
             src={`/${product.images[colorIndex]}`}
             height={180}
             width={180}
             alt="new product"
           />
-        </Link>
 
-        {/* Bag / Add to cart */}
-        {showBag && (
-          <div className="flex text-xl text-gray-700 bg-white py-2 px-4  gap-4 absolute bottom-0 right-0">
-            <IoMdAdd className="text-2xl cursor-pointer hover:text-red-500" />
-            <FiShoppingBag
-              className="hover:text-red-500 cursor-pointer"
-              onClick={handleAddtoBag(product.id)}
-            />
-          </div>
-        )}
+          {/* Bag / Add to cart */}
+          {showBag && (
+            <div className="flex text-xl text-gray-700 bg-white py-2 px-4  gap-4 absolute bottom-0 right-0">
+              <IoMdAdd className="text-2xl cursor-pointer hover:text-red-500" />
+              <FiShoppingBag
+                className="hover:text-red-500 cursor-pointer"
+                onClick={handleAddtoBag(product.id)}
+              />
+            </div>
+          )}
 
-        {product.sale && (
-          <div className="absolute top-4 right-4 bg-orange-600 rounded">
-            <h3 className="px-3 py-1 text-white font-bold capitalize text-sm">
-              sale
-            </h3>
-          </div>
-        )}
-      </div>
+          {product.sale && (
+            <div className="absolute top-4 right-4 bg-orange-600 rounded">
+              <h3 className="px-3 py-1 text-white font-bold capitalize text-sm">
+                sale
+              </h3>
+            </div>
+          )}
+        </div>
+      </Link>
+
       {/* Prouduct Description */}
       <div className="flex justify-between items-start p-4">
         <div className="flex flex-col gap-1 ">
