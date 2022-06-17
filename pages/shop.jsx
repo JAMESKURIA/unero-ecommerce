@@ -17,10 +17,20 @@ export const getStaticProps = async () => {
   const res = await fetch(`${server}/api/products`);
   const products = await res.json();
 
+  console.log(products);
+
+  // try {
+  //   const { data } = await axios.get("/api/products");
+  //   console.log(data);
+  // } catch (error) {
+  //   console.log("Fetch Error: ", error);
+  // }
+
   return {
-    props: { products },
+    props: {
+      products,
+    },
   };
 };
-
 
 export default Shop;
