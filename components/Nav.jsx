@@ -1,31 +1,43 @@
-import React from "react";
-import { FiSearch, FiShoppingBag, FiSettings } from "react-icons/fi";
-import { BsPerson } from "react-icons/bs";
 import Link from "next/link";
+import React from "react";
+import { BsPerson } from "react-icons/bs";
+import { FiSearch, FiSettings, FiShoppingBag } from "react-icons/fi";
 
 const Nav = () => {
   return (
-    <div className="w-full pt-8">
+    <div className="w-full pt-8 ">
       <div className="flex py-8 pb-6 justify-between max-w-7xl mx-auto">
         <Link href="/">
           <a className="cursor-pointer uppercase font-bold text-2xl">Unero</a>
         </Link>
         <div className="hidden md:inline-flex space-x-10 text-gray-700">
           <Link href="/">
-            <h3 className="cursor-pointer">Home</h3>
+            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
+              Home
+            </a>
           </Link>
           <Link href="/shop">
-            <h3 className="cursor-pointer text-gray-900 font-bold">Shop</h3>
+            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
+              Shop
+            </a>
           </Link>
           <Link href={"/wishlist"}>
-            <h3 className="cursor-pointer">Wishlist</h3>
+            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
+              Wishlist
+            </a>
           </Link>
-          <h3 className="cursor-pointer">Collections</h3>
+          <h3 className="cursor-pointer hover:text-gray-900 hover:font-bold">
+            Collections
+          </h3>
           <Link href={"/news"}>
-            <h3 className="cursor-pointer">News</h3>
+            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
+              News
+            </a>
           </Link>
           <Link href={"/contacts"}>
-            <h3 className="cursor-pointer">Contact Us</h3>
+            <a className="cursor-pointe hover:text-gray-900 hover:font-bold">
+              Contact Us
+            </a>
           </Link>
         </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
-import { BreadCrumbs, NewsCard } from "../components";
-import { FiSearch } from "react-icons/fi";
 import { BiMessageRounded } from "react-icons/bi";
+import { FiSearch } from "react-icons/fi";
+import { BreadCrumbs, NewsCard } from "../../components";
 
 const News = () => {
   const NEWS = [1, 2, 3, 4, 5];
@@ -22,7 +22,9 @@ const News = () => {
 
           {/* News Cards */}
           {NEWS.map((n, i) => (
-            <NewsCard key={i.toString()} last={i + 1 === NEWS.length} />
+        
+            <NewsCard news={n} key={i.toString()} last={i + 1 === NEWS.length} />
+   
           ))}
         </main>
 

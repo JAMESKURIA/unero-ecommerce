@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const NewsCard = ({ last }) => {
+const NewsCard = ({ news, last }) => {
+  console.log(news);
   return (
     <div
       className={`w-11/12 flex flex-col gap-2 mb-14 pb-14 ${
@@ -23,6 +25,11 @@ const NewsCard = ({ last }) => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi
         quaerat earum magnam doloremque. Alias quaerat placeat saepe totam ad
         possimus...
+        <Link href={`/news/${news}`}>
+          <span className="hover:border-b border-b-red-300 hover:text-red-500 text-gray-700 cursor-pointer py-1 ml-2">
+            Read more
+          </span>
+        </Link>
       </p>
     </div>
   );

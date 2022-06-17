@@ -13,7 +13,7 @@ const Shop = ({ products }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(`${server}/api/products`);
   const products = await res.json();
 
@@ -21,5 +21,6 @@ export const getServerSideProps = async () => {
     props: { products },
   };
 };
+
 
 export default Shop;

@@ -1,15 +1,14 @@
 import Image from "next/image";
-import React from "react";
-import { AiOutlineHeart, AiFillHeart, AiFillStar } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
-import { FiShoppingBag } from "react-icons/fi";
 import Link from "next/link";
+import React from "react";
+import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
+import { FiShoppingBag } from "react-icons/fi";
+import { IoMdAdd } from "react-icons/io";
 
 export const STARS = [1, 2, 3, 4, 5];
 
 const ProductCard = ({ product }) => {
   const [liked, setLiked] = React.useState(false);
-  const [showBag, setShowBag] = React.useState(false);
   const [colorIndex, setColorIndex] = React.useState(0);
 
   // handle add to wishlist
@@ -21,33 +20,28 @@ const ProductCard = ({ product }) => {
   // Add to Cart
   const handleAddtoBag = (id) => {
     // Add to bag logic here
+    alert(`Added item ${id} to cart`);
   };
   return (
-    <div
-      className="flex-1 md:max-w-xs flex flex-col"
-      onMouseEnter={() => setShowBag((prev) => true)}
-      onMouseLeave={() => setShowBag((prev) => false)}
-    >
+    <div className="flex-1 md:max-w-xs flex flex-col group">
       {/* Product Image */}
       <Link href={`/products/${product.id}`}>
-        <div className="relative bg-gray-100 p-6 flex items-center justify-center">
+        <div className="relative bg-gray-100 p-6 flex items-center justify-center hover:cursor-pointer">
           <Image
             src={`/${product.images[colorIndex]}`}
             height={180}
             width={180}
             alt="new product"
+            className="group-hover:scale-105 ease-in-out transition "
           />
-
           {/* Bag / Add to cart */}
-          {showBag && (
-            <div className="flex text-xl text-gray-700 bg-white py-2 px-4  gap-4 absolute bottom-0 right-0">
-              <IoMdAdd className="text-2xl cursor-pointer hover:text-red-500" />
-              <FiShoppingBag
-                className="hover:text-red-500 cursor-pointer"
-                onClick={handleAddtoBag(product.id)}
-              />
-            </div>
-          )}
+          <div className="hidden group-hover:flex z-10 text-xl text-gray-700 bg-white py-2 px-4  gap-4 absolute bottom-0 right-0">
+            <IoMdAdd className="text-2xl cursor-pointer hover:text-red-500" />
+            <FiShoppingBag
+              className="hover:text-red-500 cursor-pointer"
+              onClick={() => handleAddtoBag(product.id)}
+            />
+          </div>
 
           {product.sale && (
             <div className="absolute top-4 right-4 bg-orange-600 rounded">

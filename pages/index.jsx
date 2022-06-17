@@ -55,14 +55,14 @@ export default function Home() {
           {/* 1 */}
           <div className="col-span-2 relative w-full bg-gray-100 h-80 p-3 flex items-center justify-center">
             <Image
-              alt="Short T-shirts"
+              alt="Men's Jackets Collection"
               width={250}
               height={250}
-              src={"/shirt.png"}
+              src={"/man3.png"}
             />
             <div className="absolute top-4 left-4 space-y-3">
               <h3 className="capitalize text-xl font-semibold text-gray-800">
-                Short T-shirts
+                Men&#39;s Jackets Collection
               </h3>
               <button className="border border-gray-200 w-fit p-1 px-2 text-gray-500 hover:text-red-500 hover:bg-gray-300 text-lg font-medium">
                 Shop Now
@@ -151,7 +151,7 @@ export default function Home() {
       <div className="h-96 bg-gray-100 mb-20 flex justify-around items-center">
         <div>
           <div className="space-y-3">
-            <h3 className="uppercase text-4xl">Womens</h3>
+            <h3 className="uppercase text-4xl">Mens</h3>
             <h3 className="uppercase text-6xl font-semibold">Ethic WEar</h3>
             <h4 className="text-2xl">
               Upto <span className="text-orange-500 font-bold">45%</span> off
@@ -163,10 +163,10 @@ export default function Home() {
           </button>
         </div>
         <Image
-          alt="Short T-shirts"
-          width={300}
-          height={250}
-          src={"/shirt.png"}
+          alt="Men Official Shirts"
+          width={320}
+          height={320}
+          src={"/man.png"}
         />
       </div>
 

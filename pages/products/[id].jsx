@@ -1,22 +1,18 @@
+import Image from "next/image";
 import React from "react";
 import {
-  AiFillStar,
-  AiOutlineHeart,
   AiFillHeart,
-  AiFillInstagram,
-  AiOutlineTwitter,
-  AiFillYoutube,
+  AiFillInstagram, AiFillStar, AiFillYoutube, AiOutlineHeart, AiOutlineTwitter
 } from "react-icons/ai";
-
-import Slider from "react-slick";
-
-import { FiMinus, FiPlus } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
-
-import Image from "next/image";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import Slider from "react-slick";
 import ProductCard, { STARS } from "../../components/ProductCard";
-
 import { server } from "../../config";
+
+
+
+
 
 const Product = ({ product }) => {
   const [colorIndex, setColorIndex] = React.useState(0);
@@ -44,6 +40,20 @@ const Product = ({ product }) => {
     pauseOnHover: true,
   };
 
+  const settings2 = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    beforeChange: function (currentSlide, nextSlide) {
+      console.log("before change", currentSlide, nextSlide);
+    },
+    afterChange: function (currentSlide) {
+      console.log("after change", currentSlide);
+    },
+  };
   return (
     <>
       <div className="pt-10 pb-14">
@@ -60,13 +70,28 @@ const Product = ({ product }) => {
 
         <div className="grid grid-cols-2">
           {/* left - Image */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center relative">
             <Image
               src={`/${product.images[colorIndex]}`}
               alt={product.name}
               height={250}
               width={250}
             />
+
+            <div className="flex flex-col gap-2 absolute top-0  left-0 h-2/3 w-24">
+              <Slider {...settings2}>
+                {[1, 2, 3, 4, 5].map((prod) => (
+                  <div key={prod} className="bg-gray-100 p-2">
+                    <Image
+                      src={`/${product.images[colorIndex]}`}
+                      alt={product.name}
+                      height={100}
+                      width={100}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
 
           {/* right - details */}
@@ -137,39 +162,40 @@ const Product = ({ product }) => {
             )}
 
             {/* Sizes */}
-            <div className="flex space-x-4 items-center mb-2 text-sm">
-              <span className="cursor-pointer p-1 px-3 uppercase flex items-center justify-center  rounded-full bg-white border border-2 border-gray-700 text-gray-900 font-bold ">
-                s
-              </span>
-              <span className="cursor-pointer uppercase flex items-center justify-center  rounded-full text-gray-700">
-                m
-              </span>
-              <span className="cursor-pointer uppercase flex items-center justify-center  rounded-full text-gray-700">
-                l
-              </span>
-              <span className="cursor-pointer uppercase flex items-center justify-center  rounded-full text-gray-700">
-                xl
-              </span>
-              <span className="cursor-pointer uppercase flex items-center justify-center  rounded-full text-gray-700">
-                xxl
-              </span>
-            </div>
+
+            {product.sizes.length > 0 && (
+              <div className="flex space-x-4 items-center mb-2 text-sm">
+                {console.log(product)}
+                {product.sizes.map((p) => (
+                  <span
+                    key={p?.id?.toString()}
+                    className="cursor-pointer p-1 px-3 uppercase flex items-center justify-center  rounded-full bg-white border border-gray-700 text-gray-900 font-bold "
+                  >
+                    {p}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {/* clear btn */}
-            <butto className="cursor-pointer ml-20 self-start underline text-sm text-red-500 font-semibold">
+            <button className="cursor-pointer ml-20 self-start underline text-sm text-red-500 hover:text-red-500 hover:font-semibold">
               <h1>Clear</h1>
-            </butto>
+            </button>
 
             {/* buttons */}
             <div className="flex gap-2 h-10 my-8">
-              <button className="px-4 inline-flex  items-center border border-2 border-gray-700">
+              <button className="px-4 inline-flex  items-center border  border-gray-300">
                 <FiMinus />
-                <input type="number" className="outline-none border-none" />
+                <input
+                  type="number"
+                  defaultValue={1}
+                  className="outline-none border-none"
+                />
                 <FiPlus />
               </button>
               <button
                 onClick={() => handleAddtoBag(product.id)}
-                className="inline-flex justify-center items-center border border-2 border-gray-700 text-white bg-gray-800 px-10"
+                className="inline-flex justify-center items-center border  border-gray-300 text-white bg-gray-900 px-10 hover:bg-gray-200 hover:text-gray-800"
               >
                 Add to cart
               </button>
@@ -187,7 +213,9 @@ const Product = ({ product }) => {
                 ) : (
                   <AiFillHeart className="text-red-500" />
                 )}
-                <span className="font-semibold text-sm ">Add to wishlist</span>
+                <span className="font-semibold text-sm text-gray-700">
+                  Add to wishlist
+                </span>
               </button>
 
               {/* social */}

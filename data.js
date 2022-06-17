@@ -9,6 +9,7 @@ export const data = [
     discount: 8,
     colors: ["#FFC300", "red", "#DE3163"],
     inStock: 0,
+    sizes: [],
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const data = [
     discount: 12.0,
     colors: [],
     inStock: 3,
+    sizes: [],
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const data = [
     discount: 0,
     colors: ["black", "green", "red"],
     inStock: 6,
+    sizes: [],
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ export const data = [
     discount: 0,
     colors: [],
     inStock: 9,
+    sizes: [],
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ export const data = [
     discount: 12.0,
     colors: ["#DE3163", "gray", "black"],
     inStock: 7,
+    sizes: ["S", "M", "L", "XL", "XXL"],
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ export const data = [
     discount: 0,
     colors: [],
     inStock: 0,
+    sizes: [],
   },
   {
     id: 7,
@@ -75,5 +81,6 @@ export const data = [
     discount: 5.0,
     colors: ["blue", "red", "black"],
     inStock: 9,
+    sizes: [],
   },
 ];
