@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
     alert(`Added item ${id} to cart`);
   };
   return (
-    <div className="flex-1 md:max-w-xs flex flex-col group">
+    <div className="flex-1 mx-6 md:mx-4 md:max-w-xs flex flex-col group outline-none">
       {/* Product Image */}
       <Link href={`/products/${product.id}`}>
         <div className="relative bg-gray-100 p-6 flex items-center justify-center hover:cursor-pointer">

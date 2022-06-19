@@ -1,62 +1,25 @@
-import Link from "next/link";
+import { ActiveLink } from "components";
 import React from "react";
-import { BsPerson } from "react-icons/bs";
-import { FiSearch, FiSettings, FiShoppingBag } from "react-icons/fi";
 
 const Nav = () => {
   return (
-    <div className="w-full pt-8 ">
-      <div className="flex py-8 pb-6 justify-between max-w-7xl mx-auto">
-        <Link href="/">
-          <a className="cursor-pointer uppercase font-bold text-2xl">Unero</a>
-        </Link>
-        <div className="hidden md:inline-flex space-x-10 text-gray-700">
-          <Link href="/">
-            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
-              Home
-            </a>
-          </Link>
-          <Link href="/products">
-            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
-              Shop
-            </a>
-          </Link>
-          <Link href={"/wishlist"}>
-            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
-              Wishlist
-            </a>
-          </Link>
-          <h3 className="cursor-pointer hover:text-gray-900 hover:font-bold">
-            Collections
-          </h3>
-          <Link href={"/news"}>
-            <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
-              News
-            </a>
-          </Link>
-          <Link href={"/contacts"}>
-            <a className="cursor-pointe hover:text-gray-900 hover:font-bold">
-              Contact Us
-            </a>
-          </Link>
-        </div>
-
-        <div className="inline-flex space-x-6 text-2xl text-gray-700">
-          <FiSearch />
-          <BsPerson />
-          <Link href={"/cart"}>
-            <div className="relative">
-              <span className="cursor-pointer">
-                <FiShoppingBag />
-              </span>
-              <span className="cursor-pointer absolute -bottom-1 -right-2 text-white text-sm font-normal rounded-full  bg-red-500 flex items-center justify-center h-5 w-5 ">
-                3
-              </span>
-            </div>
-          </Link>
-          <FiSettings />
-        </div>
-      </div>
+    <div className="flex flex-col md:flex-row gap-6  lg:gap-10 text-gray-700">
+      <ActiveLink href={"/"}>
+        <a>Home</a>
+      </ActiveLink>
+      <ActiveLink href="/products">
+        <a>Shop</a>
+      </ActiveLink>
+      <ActiveLink href={"/wishlist"}>
+        <a>Wishlist</a>
+      </ActiveLink>
+      <ActiveLink>Collections</ActiveLink>
+      <ActiveLink href={"/news"}>
+        <a>News</a>
+      </ActiveLink>
+      <ActiveLink href={"/contacts"}>
+        <a>Contact Us</a>
+      </ActiveLink>
     </div>
   );
 };
