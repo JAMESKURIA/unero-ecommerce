@@ -1,13 +1,13 @@
+import { ProductList } from "components";
+import { data } from "data";
 import Image from "next/image";
 import {
-  AiFillInstagram, AiFillYoutube, AiOutlineTwitter
+  AiFillInstagram,
+  AiFillYoutube,
+  AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-import { ProductList } from "../components";
-import { data } from "../data";
-
-
 
 const SingleNews = () => {
   return (

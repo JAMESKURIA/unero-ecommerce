@@ -1,9 +1,9 @@
+import ProductCard from "components/ProductCard";
+import { data } from "data";
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import Slider from "react-slick";
-import ProductCard from "../components/ProductCard";
-import { data } from "../data";
 
 export default function Home() {
   // REact slick settings
@@ -237,7 +237,7 @@ export default function Home() {
               Continue
             </button>
           </div> */}
-          <div className="p-6 border border-gray-200 flex flex-col gap-4">
+          <div className="p-6 border border-gray-200 flex flex-col gap-4 hover:bg-gray-100 hover:scale-105 transform duration-200 ease-in-out select-none">
             <h4 className="text-gray-500 ">Dec 15th, 2018</h4>
             <h3 className="text-lg text-gray-900 font-semibold">
               Clean & Simple With Mimimalistic Workspace
@@ -247,11 +247,11 @@ export default function Home() {
               Consequuntur, cumque?
             </p>
 
-            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 cursor-pointer">
+            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 hover:underline  cursor-pointer">
               Continue
             </button>
           </div>
-          <div className="p-6 border border-gray-200 flex flex-col gap-4">
+          <div className="p-6 border border-gray-200 flex flex-col gap-4 hover:bg-gray-100 hover:scale-105 transform duration-200 ease-in-out select-none">
             <h4 className="text-gray-500 ">Dec 15th, 2018</h4>
             <h3 className="text-lg text-gray-900 font-semibold">
               Clean & Simple With Mimimalistic Workspace
@@ -261,11 +261,11 @@ export default function Home() {
               Consequuntur, cumque?
             </p>
 
-            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 cursor-pointer">
+            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 hover:underline  cursor-pointer">
               Continue
             </button>
           </div>
-          <div className="p-6 border border-gray-200 flex flex-col gap-4">
+          <div className="p-6 border border-gray-200 flex flex-col gap-4 hover:bg-gray-100 hover:scale-105 transform duration-200 ease-in-out select-none">
             <h4 className="text-gray-500 ">Dec 15th, 2018</h4>
             <h3 className="text-lg text-gray-900 font-semibold">
               Clean & Simple With Mimimalistic Workspace
@@ -275,7 +275,7 @@ export default function Home() {
               Consequuntur, cumque?
             </p>
 
-            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 cursor-pointer">
+            <button className="w-fit p-2 px-3 text-red-500 font-semibold hover:bg-gray-100 hover:underline  cursor-pointer">
               Continue
             </button>
           </div>

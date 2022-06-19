@@ -1,7 +1,7 @@
-import { BreadCrumbs } from "../components";
+import { BreadCrumbs } from "components";
+import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
-import { AiOutlineMail } from "react-icons/ai";
 
 const Contacts = () => {
   return (

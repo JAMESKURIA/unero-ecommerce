@@ -1,5 +1,5 @@
+import { BreadCrumbs, CartItem } from "components";
 import Link from "next/link";
-import { BreadCrumbs, CartItem } from "../components";
 import { BiArrowBack, BiRefresh, BiX } from "react-icons/bi";
 
 const Cart = () => {

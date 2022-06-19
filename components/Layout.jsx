@@ -1,6 +1,6 @@
+import { Footer, Nav } from "components";
 import Head from "next/head";
 import React from "react";
-import { Footer, Nav } from ".";
 
 const Layout = ({ children }) => {
   return (

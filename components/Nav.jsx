@@ -16,7 +16,7 @@ const Nav = () => {
               Home
             </a>
           </Link>
-          <Link href="/shop">
+          <Link href="/products">
             <a className="cursor-pointer hover:text-gray-900 hover:font-bold">
               Shop
             </a>

@@ -1,6 +1,5 @@
-import { BreadCrumbs } from "../components";
-import { WishListItem } from "../components";
-import { data } from "../data";
+import { BreadCrumbs, WishListItem } from "components";
+import { data } from "data";
 
 const Wishlist = () => {
   return (

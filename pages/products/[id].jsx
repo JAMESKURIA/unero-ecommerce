@@ -1,18 +1,18 @@
+import ProductCard, { STARS } from "components/ProductCard";
+import { data } from "data";
 import Image from "next/image";
 import React from "react";
 import {
   AiFillHeart,
-  AiFillInstagram, AiFillStar, AiFillYoutube, AiOutlineHeart, AiOutlineTwitter
+  AiFillInstagram,
+  AiFillStar,
+  AiFillYoutube,
+  AiOutlineHeart,
+  AiOutlineTwitter,
 } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import Slider from "react-slick";
-import ProductCard, { STARS } from "../../components/ProductCard";
-import { server } from "../../config";
-
-
-
-
 
 const Product = ({ product }) => {
   const [colorIndex, setColorIndex] = React.useState(0);
@@ -313,23 +313,9 @@ const Product = ({ product }) => {
 
 export default Product;
 
-// export const getServerSideProps = async (ctx) => {
-//   const res = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${ctx.params.id}`
-//   );
-//   const article = await res.json();
-
-//   return {
-//     props: {
-//       article,
-//     },
-//   };
-// };
-
 // GET STATIC PROPS
-export const getServerSideProps = async (ctx) => {
-  const res = await fetch(`${server}/api/products/${ctx.params.id}`);
-  const product = await res.json();
+export const getStaticProps = async ({ params: { id } }) => {
+  const product = data.find((d) => d.id === parseInt(id));
 
   return {
     props: {
@@ -337,33 +323,19 @@ export const getServerSideProps = async (ctx) => {
     },
   };
 };
-// // GET STATIC PROPS
-// export const getStaticProps = async (ctx) => {
-//   const res = await fetch(`${server}/api/products/${ctx.params.id}`);
-//   const product = await res.json();
 
-//   return {
-//     props: {
-//       product,
-//     },
-//   };
-// };
+// GET STATIC PATHS
+export const getStaticPaths = async () => {
+  const ids = data.map((product) => product.id);
 
-// // GET STATIC PATHS
-// export const getStaticPaths = async () => {
-//   const res = await fetch(`${server}/api/products`);
-//   const products = await res.json();
+  const paths = ids.map((id) => ({
+    params: {
+      id: id.toString(),
+    },
+  }));
 
-//   const ids = products.map((product) => product.id);
-
-//   const paths = ids.map((id) => ({
-//     params: {
-//       id: id.toString(),
-//     },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+  return {
+    paths,
+    fallback: false,
+  };
+};
