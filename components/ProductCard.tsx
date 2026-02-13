@@ -4,21 +4,26 @@ import React from "react";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoMdAdd } from "react-icons/io";
+import { Product } from "../types";
 
 export const STARS = [1, 2, 3, 4, 5];
 
-const ProductCard = ({ product }) => {
+interface ProductCardProps {
+	product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 	const [liked, setLiked] = React.useState(false);
 	const [colorIndex, setColorIndex] = React.useState(0);
 
 	// handle add to wishlist
-	const handleLike = (id) => {
+	const handleLike = (id: number) => {
 		console.log("Liked product id: ", id);
 		setLiked((prev) => !prev);
 	};
 
 	// Add to Cart
-	const handleAddtoBag = (id) => {
+	const handleAddtoBag = (id: number) => {
 		// Add to bag logic here
 		alert(`Added item ${id} to cart`);
 	};

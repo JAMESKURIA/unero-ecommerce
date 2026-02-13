@@ -1,11 +1,12 @@
 import ProductCard from "components/ProductCard";
 import { data } from "data";
+import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import Slider from "react-slick";
 
-export default function Home() {
+const Home: NextPage = () => {
 	// REact slick settings
 	const settings = {
 		dots: true,
@@ -161,7 +162,7 @@ export default function Home() {
 				</h2>
 				<Slider {...settings}>
 					{data.map((prod) => (
-						<div key={prod}>
+						<div key={prod.id}>
 							<ProductCard product={prod} />
 						</div>
 					))}
@@ -233,4 +234,6 @@ export default function Home() {
 			</div>
 		</>
 	);
-}
+};
+
+export default Home;

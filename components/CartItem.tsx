@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const CartItem = () => {
+const CartItem: React.FC = () => {
 	const [quantity, setQuantity] = useState(1);
 	const [showModal, setShowModal] = useState(false);
-	const [pendingQuantity, setPendingQuantity] = useState(null);
+	const [pendingQuantity, setPendingQuantity] = useState<number | null>(null);
 
-	const handleQuantityChange = (e) => {
+	const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = parseInt(e.target.value);
 
 		if (isNaN(value) || value < 0) {

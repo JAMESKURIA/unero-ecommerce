@@ -7,7 +7,7 @@ import {
 import { FaFacebookF } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
-const Footer = () => {
+const Footer: React.FC = () => {
 	return (
 		<div className=" bg-gray-100 py-14 md:py-20 mt-auto">
 			<div className="max-w-7xl mx-auto  text-gray-700 text-sm px-6 xl:px-0">

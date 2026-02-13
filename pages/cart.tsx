@@ -1,8 +1,9 @@
 import { BreadCrumbs, CartItem } from "components";
+import type { NextPage } from "next";
 import Link from "next/link";
 import { BiArrowBack, BiRefresh, BiX } from "react-icons/bi";
 
-const Cart = () => {
+const Cart: NextPage = () => {
 	return (
 		<div className="px-6 md:px-12 lg:px-20">
 			<BreadCrumbs title="Shopping Cart" />
@@ -52,9 +53,7 @@ const Cart = () => {
 						Calculate shipping
 					</h3>
 					<select className="p-2 border border-gray-100 outline-none bg-white">
-						<option value="Nairobi" selected>
-							Nairobi
-						</option>
+						<option value="Nairobi">Nairobi</option>
 						<option value="Kiambu">Kiambu</option>
 						<option value="Limuru">Limuru</option>
 						<option value="Thika">Thika</option>

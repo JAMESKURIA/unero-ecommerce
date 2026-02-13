@@ -1,6 +1,6 @@
 import { ActiveLink } from "components";
 
-const Nav = () => {
+const Nav: React.FC = () => {
 	return (
 		<div className="flex flex-col md:flex-row gap-6  lg:gap-10 text-gray-700">
 			<ActiveLink href={"/"}>Home</ActiveLink>

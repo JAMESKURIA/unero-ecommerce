@@ -1,8 +1,18 @@
 import { BreadCrumbs } from "components";
+import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const collections = [
+interface Collection {
+	id: number;
+	name: string;
+	description: string;
+	image: string;
+	category: string;
+	itemCount: number;
+}
+
+const collections: Collection[] = [
 	{
 		id: 1,
 		name: "Furniture Collection",
@@ -29,7 +39,7 @@ const collections = [
 	},
 ];
 
-const Collections = () => {
+const Collections: NextPage = () => {
 	return (
 		<div className="px-6 md:px-12 lg:px-20">
 			<BreadCrumbs title="Our Collections" />

@@ -1,4 +1,6 @@
-export const data = [
+import { Product } from "./types";
+
+export const data: Product[] = [
 	{
 		id: 1,
 		images: ["bag2.png", "bag1.png", "bag3.png"],

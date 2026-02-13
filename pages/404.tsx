@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
-const Custom404 = () => {
+const Custom404: React.FC = () => {
 	return (
 		<div className="min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20">
 			<div className="max-w-2xl mx-auto text-center">

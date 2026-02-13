@@ -5,7 +5,7 @@ import { BsPerson } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { FiSearch, FiSettings, FiShoppingBag, FiX } from "react-icons/fi";
 
-const Icons = () => {
+const Icons: React.FC = () => {
 	return (
 		<div className="inline-flex space-x-6 text-2xl text-gray-700">
 			<FiSearch />
@@ -26,7 +26,7 @@ const Icons = () => {
 	);
 };
 
-const Header = () => {
+const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {

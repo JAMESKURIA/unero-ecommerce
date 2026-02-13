@@ -3,10 +3,19 @@ import Link from "next/link";
 import React from "react";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { ProductCard } from ".";
+import { Product } from "../types";
 
 const STARS = [1, 2, 3, 4, 5];
 
-const ProductList = ({ products, viewMode = "grid" }) => {
+interface ProductListProps {
+	products: Product[];
+	viewMode?: "grid" | "list";
+}
+
+const ProductList: React.FC<ProductListProps> = ({
+	products,
+	viewMode = "grid",
+}) => {
 	if (viewMode === "list") {
 		return (
 			<div className="container mt-4 mx-auto">
@@ -36,15 +45,19 @@ const ProductList = ({ products, viewMode = "grid" }) => {
 	);
 };
 
-const ProductListItem = ({ product }) => {
+interface ProductListItemProps {
+	product: Product;
+}
+
+const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => {
 	const [liked, setLiked] = React.useState(false);
 
-	const handleLike = (id) => {
+	const handleLike = (id: number) => {
 		console.log("Liked product id: ", id);
 		setLiked((prev) => !prev);
 	};
 
-	const handleAddtoBag = (id) => {
+	const handleAddtoBag = (id: number) => {
 		alert(`Added item ${id} to cart`);
 	};
 

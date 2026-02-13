@@ -3,8 +3,13 @@ import Image from "next/image";
 import { IoMdAdd } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { MdBlock } from "react-icons/md";
+import { Product } from "../types";
 
-const WishListItem = ({ product }) => {
+interface WishListItemProps {
+	product: Product;
+}
+
+const WishListItem: React.FC<WishListItemProps> = ({ product }) => {
 	return (
 		<div className="flex flex-col md:grid md:grid-cols-5 items-center justify-items-center text-gray-700 text-lg py-4 my-4 border-b border-b-gray-100 gap-4">
 			<div className="flex gap-4 col-span-2 w-full  items-center ">

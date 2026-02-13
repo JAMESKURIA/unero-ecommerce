@@ -3,7 +3,14 @@ import { IoMdAdd } from "react-icons/io";
 
 const CATEGORIES = ["All", "Furniture", "Bags", "Decoration"];
 
-const NavTwo = ({
+interface NavTwoProps {
+	selectedCategory?: string;
+	onCategoryChange?: (category: string) => void;
+	viewMode?: "grid" | "list";
+	onViewModeChange?: (mode: "grid" | "list") => void;
+}
+
+const NavTwo: React.FC<NavTwoProps> = ({
 	selectedCategory = "All",
 	onCategoryChange,
 	viewMode = "grid",

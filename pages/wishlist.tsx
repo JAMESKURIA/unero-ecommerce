@@ -1,7 +1,8 @@
 import { BreadCrumbs, WishListItem } from "components";
 import { data } from "data";
+import type { NextPage } from "next";
 
-const Wishlist = () => {
+const Wishlist: NextPage = () => {
 	return (
 		<div className="px-6 md:px-12 lg:px-20">
 			<BreadCrumbs title="My Wishlist" />
