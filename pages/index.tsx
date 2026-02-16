@@ -160,6 +160,7 @@ const Home: NextPage = () => {
 				<h2 className="text-center text-3xl py-4 mb-10 font-medium text-gray-900">
 					Related products
 				</h2>
+				{/* @ts-ignore */}
 				<Slider {...settings}>
 					{data.map((prod) => (
 						<div key={prod.id}>
